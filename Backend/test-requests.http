@@ -1,0 +1,102 @@
+### Request 1: Add user 1.
+POST http://localhost:3000/log?homeNumber=1234&street=procter&city=belle&state=oklahoma&zip=11111&yearBuilt=1990&bedrooms=3&bathrooms=2&squareFeet=3500&garageCarCount=2&propertyType=single-family
+
+### Request 1: Add user 1.
+POST http://localhost:3000/log?homeNumber=4321&street=procter&city=belle&state=oklahoma&zip=11111&yearBuilt=2000&bedrooms=4&bathrooms=3&squareFeet=3800&garageCarCount=3&propertyType=single-family
+
+### Request 2: Add user 2.
+GET http://localhost:3000/log
+
+# 64870f00329353cafa6eb5f6
+### Request 2: Add user 2.
+GET http://localhost:3000/log?id=64870f00329353cafa6eb5f6
+
+### Request 1: Add user 1.
+PUT http://localhost:3000/log/64870f00329353cafa6eb5f6?propertyType=single-family
+
+### Request 3: Add user 3. 
+### Does not include a no phone number.
+DELETE http://localhost:3000/log/64870f00329353cafa6eb5f6
+
+### Request 7: Retrieve all users. 
+### Should return 6 users.
+GET http://localhost:3000/retrieve
+
+### Request 8: Retrieve by _id.
+### Update the value of _id in the following URL 
+### to Cher Gray's _id.
+GET http://localhost:3000/retrieve?_id=647a55792cdd8b5aca30648e
+
+### Request 9: Retrieve by name. 
+### Must return 1 user.
+http://localhost:3000/retrieve?name=Bobby Hamilton
+
+### Request 10: Retrieve by email. 
+### Should return 1 user.
+http://localhost:3000/retrieve?email=cher@example.com
+
+### Request 11: Retrieve by age. 
+### Should return 3 users.
+http://localhost:3000/retrieve?age=27
+
+### Request 12: Retrieve by phone. 
+### Should return 1 user: Cher Gray.
+http://localhost:3000/retrieve?phoneNumber=8114482
+
+### Request 13: Update Cher Gray. 
+### Update the value of _id in the following URL 
+### to Cher Gray's _id.
+### updateCount should be 1.
+http://localhost:3000/update?_id=63f3d1c75ba717e898cba533&age=28&phoneNumber=12193456
+
+### Request 13a : Update request for Cher Gray but without property changes. 
+### Update the value of _id in the following URL 
+### to Cher Gray's _id.
+### updateCount should be 0.
+http://localhost:3000/update?_id=63f3d1c75ba717e898cba533&age=28&phoneNumber=12193456
+
+### Request 14: Update using non-existent id. 
+### Response should be { "Error" : "Not found"}
+http://localhost:3000/update?_id=61015ac80991b44b4c49eeaf&age=28&phoneNumber=12193456            
+
+### Request 15: Retrieve by phone and age. 
+### Should return 1 user: Cher Gray.
+http://localhost:3000/retrieve?phoneNumber=12193456&age=28
+
+### Request 16: Retrieve by age. 
+## Should return 2 users.
+http://localhost:3000/retrieve?age=27
+
+### Request 17: Retrieve by age. 
+### Should return 0 users.
+http://localhost:3000/retrieve?age=21
+
+### Request 18: Delete by _id. 
+### Update the value of _id in the following URL 
+### to Cher Gray's _id.
+### deleteCount should be 1. 
+http://localhost:3000/delete?_id=63f3d1c75ba717e898cba533        
+
+### Request 19: Delete by name. 
+### deleteCount should be 1.
+http://localhost:3000/delete?name=Javier Sanders
+
+### Request 20: Delete by age. 
+### deleteCount should be 2.
+http://localhost:3000/delete?age=27
+
+### Request 21: Retrieve by age to confirm deletion. 
+### Should return 0 users.
+http://localhost:3000/retrieve?age=27
+
+### Request 22: Delete by email. 
+### deleteCount should be 1.
+http://localhost:3000/delete?email=arnold.owens@example.com 
+
+### Request 23: Delete by phoneNumber. 
+### deleteCount should be 1.
+http://localhost:3000/delete?phoneNumber=3703831407
+
+### Request 24: Retrieve all users. 
+### Should return 0 users.
+http://localhost:3000/retrieve

@@ -1,0 +1,20 @@
+#globalnav a.active {
+  color: red;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+html,
+#root,
+body,
+#main-container {
+  height: 100%;
+}
+
+article {
+  min-width: 30em;
+}
