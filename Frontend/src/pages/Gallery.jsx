@@ -76,7 +76,7 @@ const images = [
 export default function Gallery() {
   return (
     <>
-      <h2>gallery</h2>
+      <h2 className="text-center">gallery</h2>
       <article id="gallery">
         <ImageGallery items={images} />
       </article>

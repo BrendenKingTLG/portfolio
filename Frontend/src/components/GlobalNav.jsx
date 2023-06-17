@@ -24,6 +24,16 @@ export default function GlobalNav() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link pending"
                 }
+                to="/gallery"
+              >
+                gallery
+              </NavLink>
+            </li>
+            <li class="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link pending"
+                }
                 to="/contact"
               >
                 contact
